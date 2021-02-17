@@ -14,8 +14,8 @@ resource "google_compute_address" "default" {
 
 
 data "kubectl_filename_list" "manifests" {
-    pattern = "./guestbook/*.yaml"
-    #pattern = "./wordpress/*.yaml"
+    #pattern = "./guestbook/*.yaml"
+    pattern = "./wordpress/*.yaml"
 }
 
 resource "kubectl_manifest" "test" {
