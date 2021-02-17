@@ -1,0 +1,1 @@
+gcloud container clusters get-credentials terraform-k8s-demo --zone us-west1-b

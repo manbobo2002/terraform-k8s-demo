@@ -1,0 +1,91 @@
+[0m[1mdata.kubectl_filename_list.manifests: Refreshing state...[0m
+[0m[1mkubectl_manifest.test[1]: Refreshing state... [id=/api/v1/namespaces/default/services/frontend][0m
+[0m[1mkubectl_manifest.test[2]: Refreshing state... [id=/apis/apps/v1/namespaces/default/deployments/mongo][0m
+[0m[1mkubectl_manifest.test[3]: Refreshing state... [id=/api/v1/namespaces/default/services/mongo][0m
+[0m[1mkubectl_manifest.test[0]: Refreshing state... [id=/apis/apps/v1/namespaces/default/deployments/frontend][0m
+[0m[1mdata.google_container_engine_versions.default: Refreshing state...[0m
+[0m[1mgoogle_compute_network.default: Refreshing state... [id=projects/development-299412/global/networks/terraform-k8s-demo][0m
+[0m[1mdata.google_client_config.current: Refreshing state...[0m
+[0m[1mgoogle_compute_address.default: Refreshing state... [id=projects/development-299412/regions/us-west1/addresses/terraform-k8s-demo][0m
+[0m[1mgoogle_compute_subnetwork.default: Refreshing state... [id=projects/development-299412/regions/us-west1/subnetworks/terraform-k8s-demo][0m
+[0m[1mgoogle_container_cluster.default: Refreshing state... [id=projects/development-299412/locations/us-west1-b/clusters/terraform-k8s-demo][0m
+[0m[1m[32m
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+cluster_location = us-west1-b
+cluster_name = terraform-k8s-demo
+cluster_region = us-west1
+external_ip = [
+  {
+    "api_version" = "apps/v1"
+    "force_new" = false
+    "id" = "/apis/apps/v1/namespaces/default/deployments/frontend"
+    "kind" = "Deployment"
+    "live_manifest_incluster" = "apiVersion=apps/v1,kind=Deployment,metadata.labels.app.kubernetes.io/component=frontend,metadata.labels.app.kubernetes.io/name=guestbook,metadata.name=frontend,metadata.namespace=default,spec.replicas=3,spec.selector.matchLabels.app.kubernetes.io/component=frontend,spec.selector.matchLabels.app.kubernetes.io/name=guestbook,spec.template.metadata.labels.app.kubernetes.io/component=frontend,spec.template.metadata.labels.app.kubernetes.io/name=guestbook,spec.template.spec.containers.#=1,spec.template.spec.containers.0.env.#=1,spec.template.spec.containers.0.env.0.name=GET_HOSTS_FROM,spec.template.spec.containers.0.env.0.value=dns,spec.template.spec.containers.0.image=paulczar/gb-frontend:v5,spec.template.spec.containers.0.name=guestbook,spec.template.spec.containers.0.ports.#=1,spec.template.spec.containers.0.ports.0.containerPort=80,spec.template.spec.containers.0.resources.requests.cpu=100m,spec.template.spec.containers.0.resources.requests.memory=100Mi"
+    "live_resource_version" = "12383"
+    "live_uid" = "b33f55b5-96c0-472d-8c87-b0d1882db176"
+    "name" = "frontend"
+    "resource_version" = "12212"
+    "uid" = "b33f55b5-96c0-472d-8c87-b0d1882db176"
+    "validate_schema" = true
+    "wait_for_rollout" = true
+    "yaml_body" = "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: frontend\n  labels:\n    app.kubernetes.io/name: guestbook\n    app.kubernetes.io/component: frontend\nspec:\n  selector:\n    matchLabels:\n      app.kubernetes.io/name: guestbook\n      app.kubernetes.io/component: frontend\n  replicas: 3\n  template:\n    metadata:\n      labels:\n        app.kubernetes.io/name: guestbook\n        app.kubernetes.io/component: frontend\n    spec:\n      containers:\n      - name: guestbook\n        image: paulczar/gb-frontend:v5\n        # image: gcr.io/google-samples/gb-frontend:v4\n        resources:\n          requests:\n            cpu: 100m\n            memory: 100Mi\n        env:\n        - name: GET_HOSTS_FROM\n          value: dns\n        ports:\n        - containerPort: 80"
+    "yaml_body_parsed" = "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app.kubernetes.io/component: frontend\n    app.kubernetes.io/name: guestbook\n  name: frontend\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app.kubernetes.io/component: frontend\n      app.kubernetes.io/name: guestbook\n  template:\n    metadata:\n      labels:\n        app.kubernetes.io/component: frontend\n        app.kubernetes.io/name: guestbook\n    spec:\n      containers:\n      - env:\n        - name: GET_HOSTS_FROM\n          value: dns\n        image: paulczar/gb-frontend:v5\n        name: guestbook\n        ports:\n        - containerPort: 80\n        resources:\n          requests:\n            cpu: 100m\n            memory: 100Mi\n"
+    "yaml_incluster" = "apiVersion=apps/v1,kind=Deployment,metadata.labels.app.kubernetes.io/component=frontend,metadata.labels.app.kubernetes.io/name=guestbook,metadata.name=frontend,metadata.namespace=default,spec.replicas=3,spec.selector.matchLabels.app.kubernetes.io/component=frontend,spec.selector.matchLabels.app.kubernetes.io/name=guestbook,spec.template.metadata.labels.app.kubernetes.io/component=frontend,spec.template.metadata.labels.app.kubernetes.io/name=guestbook,spec.template.spec.containers.#=1,spec.template.spec.containers.0.env.#=1,spec.template.spec.containers.0.env.0.name=GET_HOSTS_FROM,spec.template.spec.containers.0.env.0.value=dns,spec.template.spec.containers.0.image=paulczar/gb-frontend:v5,spec.template.spec.containers.0.name=guestbook,spec.template.spec.containers.0.ports.#=1,spec.template.spec.containers.0.ports.0.containerPort=80,spec.template.spec.containers.0.resources.requests.cpu=100m,spec.template.spec.containers.0.resources.requests.memory=100Mi"
+  },
+  {
+    "api_version" = "v1"
+    "force_new" = false
+    "id" = "/api/v1/namespaces/default/services/frontend"
+    "kind" = "Service"
+    "live_manifest_incluster" = "apiVersion=v1,kind=Service,metadata.labels.app.kubernetes.io/component=frontend,metadata.labels.app.kubernetes.io/name=guestbook,metadata.name=frontend,metadata.namespace=default,spec.ports.#=1,spec.ports.0.port=80,spec.ports.0.targetPort=80,spec.selector.app.kubernetes.io/component=frontend,spec.selector.app.kubernetes.io/name=guestbook,spec.type=LoadBalancer"
+    "live_resource_version" = "23574"
+    "live_uid" = "86e6ce70-e947-4c03-a7b7-5f5cbf67deaf"
+    "name" = "frontend"
+    "resource_version" = "23367"
+    "uid" = "86e6ce70-e947-4c03-a7b7-5f5cbf67deaf"
+    "validate_schema" = true
+    "wait_for_rollout" = true
+    "yaml_body" = "apiVersion: v1\nkind: Service\nmetadata:\n  name: frontend\n  labels:\n    app.kubernetes.io/name: guestbook\n    app.kubernetes.io/component: frontend\nspec:\n  # if your cluster supports it, uncomment the following to automatically create\n  # an external load-balanced IP for the frontend service.\n  type: LoadBalancer\n  ports:\n  - port: 80\n    targetPort: 80\n  selector:\n    app.kubernetes.io/name: guestbook\n    app.kubernetes.io/component: frontend"
+    "yaml_body_parsed" = "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app.kubernetes.io/component: frontend\n    app.kubernetes.io/name: guestbook\n  name: frontend\nspec:\n  ports:\n  - port: 80\n    targetPort: 80\n  selector:\n    app.kubernetes.io/component: frontend\n    app.kubernetes.io/name: guestbook\n  type: LoadBalancer\n"
+    "yaml_incluster" = "apiVersion=v1,kind=Service,metadata.labels.app.kubernetes.io/component=frontend,metadata.labels.app.kubernetes.io/name=guestbook,metadata.name=frontend,metadata.namespace=default,spec.ports.#=1,spec.ports.0.port=80,spec.ports.0.targetPort=80,spec.selector.app.kubernetes.io/component=frontend,spec.selector.app.kubernetes.io/name=guestbook,spec.type=LoadBalancer"
+  },
+  {
+    "api_version" = "apps/v1"
+    "force_new" = false
+    "id" = "/apis/apps/v1/namespaces/default/deployments/mongo"
+    "kind" = "Deployment"
+    "live_manifest_incluster" = "apiVersion=apps/v1,kind=Deployment,metadata.labels.app.kubernetes.io/component=backend,metadata.labels.app.kubernetes.io/name=mongo,metadata.name=mongo,metadata.namespace=default,spec.replicas=1,spec.selector.matchLabels.app.kubernetes.io/component=backend,spec.selector.matchLabels.app.kubernetes.io/name=mongo,spec.template.metadata.labels.app.kubernetes.io/component=backend,spec.template.metadata.labels.app.kubernetes.io/name=mongo,spec.template.spec.containers.#=1,spec.template.spec.containers.0.args.#=2,spec.template.spec.containers.0.args.0=--bind_ip,spec.template.spec.containers.0.args.1=0.0.0.0,spec.template.spec.containers.0.image=mongo:4.2,spec.template.spec.containers.0.name=mongo,spec.template.spec.containers.0.ports.#=1,spec.template.spec.containers.0.ports.0.containerPort=27017,spec.template.spec.containers.0.resources.requests.cpu=100m,spec.template.spec.containers.0.resources.requests.memory=100Mi"
+    "live_resource_version" = "12459"
+    "live_uid" = "30337d39-3c2e-4eb0-ab46-8e1498596643"
+    "name" = "mongo"
+    "resource_version" = "12221"
+    "uid" = "30337d39-3c2e-4eb0-ab46-8e1498596643"
+    "validate_schema" = true
+    "wait_for_rollout" = true
+    "yaml_body" = "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: mongo\n  labels:\n    app.kubernetes.io/name: mongo\n    app.kubernetes.io/component: backend\nspec:\n  selector:\n    matchLabels:\n      app.kubernetes.io/name: mongo\n      app.kubernetes.io/component: backend\n  replicas: 1\n  template:\n    metadata:\n      labels:\n        app.kubernetes.io/name: mongo\n        app.kubernetes.io/component: backend\n    spec:\n      containers:\n      - name: mongo\n        image: mongo:4.2\n        args:\n          - --bind_ip\n          - 0.0.0.0\n        resources:\n          requests:\n            cpu: 100m\n            memory: 100Mi\n        ports:\n        - containerPort: 27017"
+    "yaml_body_parsed" = "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app.kubernetes.io/component: backend\n    app.kubernetes.io/name: mongo\n  name: mongo\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app.kubernetes.io/component: backend\n      app.kubernetes.io/name: mongo\n  template:\n    metadata:\n      labels:\n        app.kubernetes.io/component: backend\n        app.kubernetes.io/name: mongo\n    spec:\n      containers:\n      - args:\n        - --bind_ip\n        - 0.0.0.0\n        image: mongo:4.2\n        name: mongo\n        ports:\n        - containerPort: 27017\n        resources:\n          requests:\n            cpu: 100m\n            memory: 100Mi\n"
+    "yaml_incluster" = "apiVersion=apps/v1,kind=Deployment,metadata.labels.app.kubernetes.io/component=backend,metadata.labels.app.kubernetes.io/name=mongo,metadata.name=mongo,metadata.namespace=default,spec.replicas=1,spec.selector.matchLabels.app.kubernetes.io/component=backend,spec.selector.matchLabels.app.kubernetes.io/name=mongo,spec.template.metadata.labels.app.kubernetes.io/component=backend,spec.template.metadata.labels.app.kubernetes.io/name=mongo,spec.template.spec.containers.#=1,spec.template.spec.containers.0.args.#=2,spec.template.spec.containers.0.args.0=--bind_ip,spec.template.spec.containers.0.args.1=0.0.0.0,spec.template.spec.containers.0.image=mongo:4.2,spec.template.spec.containers.0.name=mongo,spec.template.spec.containers.0.ports.#=1,spec.template.spec.containers.0.ports.0.containerPort=27017,spec.template.spec.containers.0.resources.requests.cpu=100m,spec.template.spec.containers.0.resources.requests.memory=100Mi"
+  },
+  {
+    "api_version" = "v1"
+    "force_new" = false
+    "id" = "/api/v1/namespaces/default/services/mongo"
+    "kind" = "Service"
+    "live_manifest_incluster" = "apiVersion=v1,kind=Service,metadata.labels.app.kubernetes.io/component=backend,metadata.labels.app.kubernetes.io/name=mongo,metadata.name=mongo,metadata.namespace=default,spec.ports.#=1,spec.ports.0.port=27017,spec.ports.0.targetPort=27017,spec.selector.app.kubernetes.io/component=backend,spec.selector.app.kubernetes.io/name=mongo"
+    "live_resource_version" = "12229"
+    "live_uid" = "3ed2f980-ff10-43e3-8418-6099412ce280"
+    "name" = "mongo"
+    "resource_version" = "12229"
+    "uid" = "3ed2f980-ff10-43e3-8418-6099412ce280"
+    "validate_schema" = true
+    "wait_for_rollout" = true
+    "yaml_body" = "apiVersion: v1\nkind: Service\nmetadata:\n  name: mongo\n  labels:\n    app.kubernetes.io/name: mongo\n    app.kubernetes.io/component: backend\nspec:\n  ports:\n  - port: 27017\n    targetPort: 27017\n  selector:\n    app.kubernetes.io/name: mongo\n    app.kubernetes.io/component: backend"
+    "yaml_body_parsed" = "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app.kubernetes.io/component: backend\n    app.kubernetes.io/name: mongo\n  name: mongo\nspec:\n  ports:\n  - port: 27017\n    targetPort: 27017\n  selector:\n    app.kubernetes.io/component: backend\n    app.kubernetes.io/name: mongo\n"
+    "yaml_incluster" = "apiVersion=v1,kind=Service,metadata.labels.app.kubernetes.io/component=backend,metadata.labels.app.kubernetes.io/name=mongo,metadata.name=mongo,metadata.namespace=default,spec.ports.#=1,spec.ports.0.port=27017,spec.ports.0.targetPort=27017,spec.selector.app.kubernetes.io/component=backend,spec.selector.app.kubernetes.io/name=mongo"
+  },
+]
+network = https://www.googleapis.com/compute/v1/projects/development-299412/global/networks/terraform-k8s-demo
+subnetwork_name = terraform-k8s-demo[0m
